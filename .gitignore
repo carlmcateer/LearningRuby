@@ -1,3 +1,4 @@
-#test
+#test to see how .gitignore works
+#there is a Html file on my computer called Junk.html and I wanted to see if it would be skipped
 
 *.html
