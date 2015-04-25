@@ -43,15 +43,23 @@ unless hungry
 else
   puts "Time to eat!"
 end
-=end
 
 #True and false opperators, rember when using the const true not to use uppercase!
-is_true = 2 != 3
+is_true = (2 != 3 && 7 <= 90) || true # && is the and opperator
 
-is_false = 2 == 3
+is_false = 2 == 3 || (5**2 != 25 && false)  # || is the or opperator
 
-if is_true == true
+if is_true == !false # the ! is the Not opperator, it changes a true to a false of vice versa
 	puts "We did it!"
 else
 	puts "We done screwed up!"
+end
+
+=end
+sleepy = true
+
+unless sleepy
+    puts "Lets do this"
+else
+    puts "Next time"
 end
