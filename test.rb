@@ -8,3 +8,5 @@ puts name.upcase.reverse
 
 puts name.downcase
 
+puts "What age are you?"
+user_age = gets.chomp
