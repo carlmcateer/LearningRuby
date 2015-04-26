@@ -62,7 +62,6 @@ unless sleepy
 else
     puts "Next time"
 end
-=end
 
 print "Gimmee a string? "
 
@@ -75,4 +74,56 @@ if user_input.include?"s"
     puts "What was that? '#{user_input}'!, you sound like an idot!'"
 else
     puts "Nothing to see here!"
+end
+# While Loops!
+test_counter = 0
+while test_counter <=5
+	puts "Hi Carl, is this anoying yet?"
+	test_counter = test_counter + 1
+end
+
+#Untill loop is a backwards while loop, it execuits until a value is true!
+until_counter = 1
+until until_counter > 10
+  puts until_counter
+  # Add code to update 'until_counter' here!
+  until_counter += 1
+end
+
+# For loops look weird!
+# ... means less than the value on the right, .. means less than or 
+#equal to.
+#Bellow give the same result
+# NB dont forget the 'in'!
+for number in 1...16
+	puts number
+end
+
+for number1 in 1..15
+	puts number1
+end
+
+
+num = 50
+
+loop do
+	num -= 1
+	next if num % 2 == 0 # Returns only odd numbers as it skips the even ones
+	puts "#{num}"
+	break if num <= 1
+end
+
+# Arrays!
+
+array_num = [1,2,3,4,5,6,7,8,9,10]
+
+array_num.each {|i| puts i}
+
+20.times { puts "Hello world!" } # Exicuates whats in the currly braces a specified number of times
+=end
+i = 0
+loop do
+    i += 1
+    print "Ruby!"
+    break if i == 30
 end
