@@ -8,7 +8,7 @@ puts name.reverse
 
 puts name.upcase.reverse
 
-puts name.downcase
+puts name downcase
 
 #Using gets for the first time, chomp is used to cut off the extra line in the cmd prompt
 print "What's your first name?"
@@ -67,11 +67,11 @@ print "Gimmee a string? "
 
 user_input = gets.chomp
 
-user_input.downcase!
+user_input downcase!
 
 if user_input.include?"s"
     user_input.gsub!(/s/, "th")
-    puts "What was that? '#{user_input}'!, you sound like an idot!'"
+    puts "What was that? '#{user_input}'!, you sound like an  dot!'"
 else
     puts "Nothing to see here!"
 end
@@ -120,10 +120,55 @@ array_num = [1,2,3,4,5,6,7,8,9,10]
 array_num.each {|i| puts i}
 
 20.times { puts "Hello world!" } # Exicuates whats in the currly braces a specified number of times
-=end
 i = 0
 loop do
     i += 1
     print "Ruby!"
     break if i == 30
+end
+puts "Say something!"
+text = gets.chomp
+puts "Take it back!"
+redact = gets.chomp
+
+words= text.split(" ")
+
+words.each do |i|
+    if i == redact
+        print "REDACTED "
+    else
+        print i + " "
+    end
+end
+
+my_array = ["Mon","Tues","Wed","Thurs","Fri","Sat","Sun"]
+
+puts my_array[2]
+
+my_big_array = [[["Farts","trains","automobiles"],["Farts","trains","automobiles"],["Farts","trains","automobiles"],["Farts","trains","automobiles"]], [["Farts","trains","automobiles"],["Farts","trains","automobiles"],["Farts","trains","automobiles"],["Farts","trains","automobiles"]], [["Farts","trains","automobiles"],["Farts","trains","automobiles"],["Farts","trains","automobiles"],["Farts","trains","automobiles"]]]
+
+puts my_big_array[4]
+
+# itterating over multidimentional arrays!
+s = [["ham", "swiss"], ["turkey", "cheddar"], ["roast beef", "gruyere"]]
+
+s.each do |sub_array| 
+    sub_array.each do |x|
+        puts x
+    end
+end
+
+=end
+#example of a hash and itterating over the hash
+
+lunch_order = {
+  "Ryan" => "wonton soup",
+  "Eric" => "hamburger",
+  "Jimmy" => "sandwich",
+  "Sasha" => "salad",
+  "Cole" => "taco"
+}
+
+lunch_order.each do |name, order|
+	puts "#{name} wants #{order}"
 end
