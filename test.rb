@@ -55,11 +55,24 @@ else
 	puts "We done screwed up!"
 end
 
-=end
 sleepy = true
 
 unless sleepy
     puts "Lets do this"
 else
     puts "Next time"
+end
+=end
+
+print "Gimmee a string? "
+
+user_input = gets.chomp
+
+user_input.downcase!
+
+if user_input.include?"s"
+    user_input.gsub!(/s/, "th")
+    puts "What was that? '#{user_input}'!, you sound like an idot!'"
+else
+    puts "Nothing to see here!"
 end
