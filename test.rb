@@ -153,12 +153,11 @@ puts my_big_array[4]
 s = [["ham", "swiss"], ["turkey", "cheddar"], ["roast beef", "gruyere"]]
 
 s.each do |sub_array| 
-    sub_array.each do |x|
+    sub_array.each do |x| 
         puts x
     end
 end
 
-=end
 #example of a hash and itterating over the hash
 
 lunch_order = {
@@ -171,4 +170,29 @@ lunch_order = {
 
 lunch_order.each do |name, order|
 	puts "#{name} wants #{order}"
+end
+=end
+# Creats a hash table of all the words in a string and thend prints out the frequency of each word
+#could be a usefull base for some data crunching like he rapper list
+
+puts "Gimme Text: "
+
+text = gets.chomp
+
+words = text.split(" ")
+
+frequencies = Hash.new(0)
+
+words.each do |x|
+    frequencies[x] +=1
+end
+
+frequencies = frequencies.sort_by do |word, x|
+    x
+end
+
+frequencies.reverse!
+
+frequencies.each do |x ,y|
+    puts x + " " + y.to_s
 end
