@@ -91,7 +91,7 @@ until until_counter > 10
 end
 
 # For loops look weird!
-# ... means less than the value on the right, .. means less than or 
+# ... means less than the value on the right, .. means less than or
 #equal to.
 #Bellow give the same result
 # NB dont forget the 'in'!
@@ -152,8 +152,8 @@ puts my_big_array[4]
 # itterating over multidimentional arrays!
 s = [["ham", "swiss"], ["turkey", "cheddar"], ["roast beef", "gruyere"]]
 
-s.each do |sub_array| 
-    sub_array.each do |x| 
+s.each do |sub_array|
+    sub_array.each do |x|
         puts x
     end
 end
@@ -171,7 +171,6 @@ lunch_order = {
 lunch_order.each do |name, order|
 	puts "#{name} wants #{order}"
 end
-=end
 # Creats a hash table of all the words in a string and thend prints out the frequency of each word
 #could be a usefull base for some data crunching like he rapper list
 
@@ -196,3 +195,43 @@ frequencies.reverse!
 frequencies.each do |x ,y|
     puts x + " " + y.to_s
 end
+
+
+#first method(function)
+def hello
+	puts "Hello world, it great to see you"
+end
+
+hello
+
+def square(n)
+	puts n*n # Does not work because gets returns a string
+end
+
+puts "Gimme a number, I dare you!"
+
+number = gets.chomp
+
+square(number) # Does not work because gets returns a string
+
+
+# example of the sort method
+my_array = [3, 4, 8, 7, 1, 6, 5, 9, 2]
+
+# Call the sort! method on my_array below.
+# my_array should then equal [1, 2, 3, 4, 5, 6, 7, 8, 9].
+my_array.sort!
+
+puts my_array
+
+my_array1 = [1, 2, 3, 4, 5]
+
+my_array1.each {|i| puts i*i}
+
+=end
+#How to use a block to sort in reverse aphabetical order
+fruits = ["orange", "apple", "banana", "pear", "grapes"]
+
+fruits.sort! { |y,x| x <=> y}
+
+fruits.each { |i| puts i }
