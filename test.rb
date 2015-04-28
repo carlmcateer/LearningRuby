@@ -281,7 +281,7 @@ end
 
 puts "String time: #{string_time} seconds."
 puts "Symbol time: #{symbol_time} seconds."
-=end
+
 movie_ratings = {
   memento: 3,
   primer: 3.5,
@@ -297,6 +297,7 @@ movie_ratings = {
 
 good_movies = movie_ratings.select {|x , y| y > 3}
 
+=end
 movie_ratings = {
   memento: 3,
   primer: 3.5,
