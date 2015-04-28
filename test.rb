@@ -228,10 +228,85 @@ my_array1 = [1, 2, 3, 4, 5]
 
 my_array1.each {|i| puts i*i}
 
-=end
 #How to use a block to sort in reverse aphabetical order
 fruits = ["orange", "apple", "banana", "pear", "grapes"]
 
 fruits.sort! { |y,x| x <=> y}
 
 fruits.each { |i| puts i }
+
+#method for sorthing an array in assending or desending order
+def alphabetize (arr, rev = false)
+    arr.sort!
+
+    if rev
+        return arr.reverse!
+    else
+        return arr
+    end
+end
+
+numbers = [1,8,3,56,4]
+
+puts alphabetize(numbers)
+puts alphabetize(numbers, true)
+
+#First lesson about symbols
+my_first_symbol = :symbol
+
+strings = ["HTML", "CSS", "JavaScript", "Python", "Ruby"]
+
+# Add your code below!
+
+symbols = []
+
+strings.each do |s|
+    s = s.to_sym # note how this works, must assign new value to s, not transform it
+    symbols.push(s)
+end
+
+
+require 'benchmark'
+
+string_AZ = Hash[("a".."z").to_a.zip((1..26).to_a)]
+symbol_AZ = Hash[(:a..:z).to_a.zip((1..26).to_a)]
+
+string_time = Benchmark.realtime do
+  100_000.times { string_AZ["r"] }
+end
+
+symbol_time = Benchmark.realtime do
+  100_000.times { symbol_AZ[:r] }
+end
+
+puts "String time: #{string_time} seconds."
+puts "Symbol time: #{symbol_time} seconds."
+=end
+movie_ratings = {
+  memento: 3,
+  primer: 3.5,
+  the_matrix: 5,
+  truman_show: 4,
+  red_dawn: 1.5,
+  skyfall: 4,
+  alex_cross: 2,
+  uhf: 1,
+  lion_king: 3.5
+}
+# learning to use the select method to filter through key value pairs
+
+good_movies = movie_ratings.select {|x , y| y > 3}
+
+movie_ratings = {
+  memento: 3,
+  primer: 3.5,
+  the_matrix: 3,
+  truman_show: 4,
+  red_dawn: 1.5,
+  skyfall: 4,
+  alex_cross: 2,
+  uhf: 1,
+  lion_king: 3.5
+}
+# Symple way to print all keys
+movie_ratings.each{ |x, y| puts x}
