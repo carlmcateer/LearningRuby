@@ -311,7 +311,7 @@ movie_ratings = {
 # Symple way to print all keys
 movie_ratings.each{ |x, y| puts x}
 =end
-# The start of Add Update Display Delete
+# The start of Add Update Display Delete  V1
 movies ={
     'Upstream Color' => 4
     }
@@ -329,6 +329,53 @@ when "display"
     puts "Movies!"
 when "delete"
     puts "Deleted!"
+else
+    puts "Error!"
+end
+
+# V2, Also its called CRUD, create, read, update, delete
+
+movies ={
+    jaws: 4
+    }
+
+puts "Type Something"
+
+choice = gets.chomp
+
+case choice
+when "add"
+    puts "Type a movie!"
+    title = gets.chomp
+    puts "Rate it from 1 to 4"
+    rating = gets.chomp
+    if movies[title.to_sym].nil? == true
+        movies[title.to_sym] = rating.to_i
+    else
+        puts "That movie is already in the database"
+    end
+when "update"
+    puts "Type a movie!"
+    title = gets.chomp
+    if movies[title.to_sym].nil? == true
+        puts "Error, movie not found"
+    else
+        puts "Update rating from 1 to 4"
+        rating = gets.chomp
+        movies[title.to_sym] = rating.to_i
+    end
+when "display"
+    movies.each do |movie,rating|
+        puts "#{movie}: #{rating}"
+    end
+when "delete"
+    puts "Type a movie!"
+    title = gets.chomp
+    if movies[title.to_sym].nil? == true
+        puts "Error!"
+    else
+        movies.delete(title)
+    end
 else
     puts "Error!"
 end
