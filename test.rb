@@ -297,7 +297,6 @@ movie_ratings = {
 
 good_movies = movie_ratings.select {|x , y| y > 3}
 
-=end
 movie_ratings = {
   memento: 3,
   primer: 3.5,
@@ -311,3 +310,25 @@ movie_ratings = {
 }
 # Symple way to print all keys
 movie_ratings.each{ |x, y| puts x}
+=end
+# The start of Add Update Display Delete
+movies ={
+    'Upstream Color' => 4
+    }
+
+puts "Type Something"
+
+choice = gets.chomp
+
+case choice
+when "add"
+    puts "Added!"
+when "update"
+    puts "Updated!"
+when "display"
+    puts "Movies!"
+when "delete"
+    puts "Deleted!"
+else
+    puts "Error!"
+end
