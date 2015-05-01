@@ -310,7 +310,6 @@ movie_ratings = {
 }
 # Symple way to print all keys
 movie_ratings.each{ |x, y| puts x}
-=end
 # The start of Add Update Display Delete  V1
 movies ={
     'Upstream Color' => 4
@@ -379,3 +378,10 @@ when "delete"
 else
     puts "Error!"
 end
+# if and if or unless statment only check for a bool then it can
+#be on one line, for example
+=end
+
+rich = true
+
+puts "Commie, No!" if rich
