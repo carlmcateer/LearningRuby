@@ -441,10 +441,15 @@ my_array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 my_array.each {|x| puts x if x % 2 == 0}
 
-=end
 # Example of .upto and .downto methods
 
 "A".upto("Z") { |x| puts x}
 # "Z".downto("A") { |y| puts y} ## Does not work!
 # Ruby has no .downto method for strings, below is a work around
 "A".upto("Z").to_a.reverse.each { |x| puts x }
+
+=end
+
+age = 24
+
+puts "True" if age.respond_to?(:next) == true
