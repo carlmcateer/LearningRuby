@@ -448,8 +448,54 @@ my_array.each {|x| puts x if x % 2 == 0}
 # Ruby has no .downto method for strings, below is a work around
 "A".upto("Z").to_a.reverse.each { |x| puts x }
 
-=end
-
+#.respont_to? can be used as a way of checking data types
 age = 24
 
 puts "True" if age.respond_to?(:next) == true
+
+#.push is used to add a value to an array, << can also be used as
+#short hand.
+
+alphabet = ["a", "b", "c"]
+alphabet.push("d") # Update me!
+#is the same as
+alphabet = ["a", "b", "c"]
+alphabet<<("d") # Update me!
+
+caption = "A giraffe surrounded by "
+caption << "weezards!" # Me, too!
+
+#you can use several different opperators to add a string to another string
+#but you cannot add a non string (like an int) to a string
+#without converting it.
+#for this you can use a method like .to_s
+# or
+# use #{value} to take advantage of string interpolation
+favorite_things = ["Ruby", "espresso", "candy"]
+
+puts "A few of my favorite things:"
+
+favorite_things.each do |thing|
+  puts "I love " << thing << "!"
+  #is the same as
+  puts "I love #{thing}!"
+end
+
+=end
+puts "What's your favorite language?"
+language = gets.chomp
+
+case language
+  when "Ruby"
+    puts "Ruby is great for web apps!"
+  when "Python"
+    puts "Python is great for science."
+  when "JavaScript"
+    puts "JavaScript makes websites awesome."
+  when "HTML"
+    puts "HTML is what websites are made of!"
+  when "CSS"
+    puts "CSS makes websites pretty."
+  else
+    puts "I don't know that language!"
+end
