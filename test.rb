@@ -380,8 +380,64 @@ else
 end
 # if and if or unless statment only check for a bool then it can
 #be on one line, for example
-=end
-
+# A more consise way to write an if and unless
 rich = true
 
 puts "Commie, No!" if rich
+
+taraNotGreat = false
+
+puts "Tara is great!" unless taraNotGreat
+
+#an example of a "tyranry conditional expression"
+#if confused google it
+puts 1>0? "One is great! Zero sucks!": "Zero is number one!"
+
+# A Switch is called a case in Ruby, it looks like this
+puts "Hello there!"
+puts "What language do you speek"
+greeting = gets.chomp
+
+case greeting
+    when "English"
+        puts "Hello!"
+    when "French"
+        puts "Bonjour"
+    when "German"
+        puts "Guten Tag!"
+    when "Finnish"
+        puts "Haloo!"
+    else
+        puts "I dont know that language!"
+end
+# ||= is the conditional assignment opperator, it is used to
+# assign a value to a viarable if it has not been assigned something
+# already
+favorite_language ||= "ruby"
+puts favorite_language
+# in Ruby you dont need to write return!
+def multiple_of_three(n)
+  n % 3 == 0 ? "True" : "False"
+end
+
+=end
+#if a value is going to be false then ruby does not evaluate
+#everything
+def a
+  puts "A was evaluated!"
+  return true
+end
+
+def b
+  puts "B was also evaluated!"
+  return true
+end
+
+puts a || b
+puts "------"
+puts a && b
+
+#example of the each method and the one line if
+my_array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+my_array.each {|x| puts x if x % 2 == 0}
