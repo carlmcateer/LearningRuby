@@ -496,6 +496,8 @@ case language
     puts "HTML is what websites are made of!"
   when "CSS"
     puts "CSS makes websites pretty."
+  when "test"
+    puts "git worked!"
   else
     puts "I don't know that language!"
 end
