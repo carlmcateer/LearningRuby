@@ -3,3 +3,4 @@
 
 *.html
 .git
+.DS_Store
